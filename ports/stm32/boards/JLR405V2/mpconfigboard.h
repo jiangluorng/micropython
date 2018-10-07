@@ -16,6 +16,14 @@
 #define MICROPY_HW_ENABLE_DAC       (1)
 #define MICROPY_HW_ENABLE_USB       (1)
 
+
+// set USB device Mode
+// the USB port is work at the mode: CDC+MSC (CDC means virtual COM port, MSC means mass storage class)
+// if you want to hide flash or SD card, you can make change in 'main.c' as:
+// From: pyb_usb_dev_init(USBD_VID, USBD_PID_CDC_MSC, USBD_MODE_CDC_MSC, NULL);
+// To:   pyb_usb_dev_init(USBD_VID, USBD_PID_CDC    , USBD_MODE_CDC, NULL    );
+
+
 // use USART6 as REPL (Read–Eval–Print Loop)
 #define MICROPY_HW_UART_REPL PYB_UART_6
 #define MICROPY_HW_UART_REPL_BAUD 115200
