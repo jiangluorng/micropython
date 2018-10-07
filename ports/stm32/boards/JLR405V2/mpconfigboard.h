@@ -16,8 +16,12 @@
 #define MICROPY_HW_ENABLE_DAC       (1)
 #define MICROPY_HW_ENABLE_USB       (1)
 
+// use USART6 as REPL (Read–Eval–Print Loop)
+#define MICROPY_HW_UART_REPL PYB_UART_6
+#define MICROPY_HW_UART_REPL_BAUD 115200
+
 // use external SPI flash for storage
-#define MICROPY_HW_SPIFLASH_SIZE_BITS (64 * 1024 * 1024)
+#define MICROPY_HW_SPIFLASH_SIZE_BITS (64 * 1024 * 1024)        //W25Q64 have 64M bits flash
 #define MICROPY_HW_SPIFLASH_CS      (pin_B12)
 #define MICROPY_HW_SPIFLASH_SCK     (pin_B13)
 #define MICROPY_HW_SPIFLASH_MOSI    (pin_B15)
